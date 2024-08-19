@@ -1,0 +1,34 @@
+{
+  "type": "module",
+  "name": "carpo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./server.js",
+    "start": "cross-env NODE_ENV=production node ./server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@remix-run/express": "^2.11.2",
+    "@remix-run/node": "^2.11.2",
+    "@remix-run/react": "^2.11.2",
+    "cross-env": "^7.0.3",
+    "express": "^4.19.2",
+    "isbot": "^4.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.11.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "vite": "^5.4.1",
+    "@remix-run/eslint-config": "^2.0.0-pre.8",
+    "eslint": "^8.38.0",
+    "typescript": "^5.1.6"
+  }
+}

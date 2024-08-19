@@ -1,0 +1,71 @@
+/** @format */
+
+/** CALENDAR GRAPH **/
+
+:root {
+  --square-size: 14px;
+  --square-gap: 2px;
+  --week-width: calc(var(--square-size) + var(--square-gap));
+}
+
+.months {
+  grid-area: months;
+}
+.days {
+  grid-area: days;
+}
+.squares {
+  grid-area: squares;
+}
+
+.graph {
+  border-radius: 1rem;
+  border: 1px solid;
+  display: inline-grid;
+  grid-template-areas: "empty months" "days squares";
+  grid-template-columns: auto 1fr;
+  padding: 0.2rem;
+
+  font-size: 12px;
+
+  li {
+    list-style: none;
+  }
+}
+
+.months {
+  text-transform: uppercase;
+  margin-bottom: -0.4rem;
+  display: grid;
+  grid-template-columns: repeat(12, calc(var(--week-width) * 4));
+}
+
+.days {
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.days,
+.squares {
+  display: grid;
+  margin-left: -1.6rem;
+  grid-gap: var(--square-gap);
+  grid-template-rows: repeat(7, var(--square-size));
+}
+
+.squares {
+  border-radius: 100%;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--square-size);
+  grid-auto-rows: var(--square-size);
+  margin-right: 0.8rem;
+}
+
+.days li:nth-child(odd) {
+  visibility: hidden;
+}
+
+.squares li {
+  border-radius: 100%;
+  background-color: #ebedf0;
+}
