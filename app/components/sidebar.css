@@ -24,10 +24,23 @@
   }
 }
 
-.star {
-  border-color: lightgrey;
-}
-
-.all {
-  border-color: lightgrey;
+#sidebar {
+  .star {
+    border-color: lightgrey;
+  }
+  .all {
+    border-color: lightgrey;
+  }
+  .reading {
+    background-color: #ffd3ba;
+  }
+  .coding {
+    background-color: #cfdeff;
+  }
+  .art {
+    background-color: #fffccf;
+  }
+  .writing {
+    background-color: #aee2cd;
+  }
 }

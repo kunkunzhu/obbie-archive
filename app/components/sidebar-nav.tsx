@@ -6,14 +6,16 @@ import "./sidebar.css";
 
 interface SidebarNavI {
   hobbies: HobbyI[];
+  // colorDict: any;
 }
 
 export default function SidebarNav({ hobbies }: SidebarNavI) {
   const renderHobbies = (hobbies: HobbyI[]): ReactNode[] => {
     let hobbiesArray: ReactNode[] = [];
     hobbies.map((hobby, index) => {
+      const className = "hobby " + hobby.name;
       hobbiesArray.push(
-        <div className="hobby">
+        <div className={className}>
           <a href={`/home`} key={index}>
             {hobby.emoji}
           </a>
