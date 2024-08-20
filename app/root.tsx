@@ -21,14 +21,14 @@ import { HobbyI } from "common/types";
 export default function App() {
   const exampleHobbyEntriesData = Object.values(hobbyEntriesData);
   const exampleHobbiesData = hobbiesData as HobbyI[];
-  let hobbyNameDict: any = {};
-  let hobbyColorDict: any = {};
+  let hobbyEmojiDict: any = {};
+  // let hobbyColorDict: any = {};
   hobbiesData.forEach((hobby: HobbyI) => {
-    hobbyNameDict[hobby.name] = hobby.emoji;
+    hobbyEmojiDict[hobby.name] = hobby.emoji;
   });
-  hobbiesData.forEach((hobby: HobbyI) => {
-    hobbyColorDict[hobby.name] = hobby.color;
-  });
+  // hobbiesData.forEach((hobby: HobbyI) => {
+  //   hobbyColorDict[hobby.name] = hobby.color;
+  // });
 
   return (
     <html>
@@ -41,12 +41,12 @@ export default function App() {
       <body>
         <div id="sidebar">
           <h1>obbie app</h1>
-          <h1 className="placeholder">placeholder: selection</h1>
+          {/* <h1 className="placeholder">placeholder: selection</h1> */}
           <SidebarNav hobbies={exampleHobbiesData} />
         </div>
         <div id="main">
-          <div>
-            <h1 className="placeholder">placeholder: tracker graph</h1>
+          <div className="section calendar">
+            {/* <h1 className="placeholder">placeholder: tracker graph</h1> */}
             <div>
               <CalendarTracker
                 months={timeTable.months}
@@ -54,9 +54,12 @@ export default function App() {
               />
             </div>
           </div>
-          <div>
-            <h1 className="placeholder">placeholder: timeline tracker</h1>
-            <TimelineTracker entries={exampleHobbyEntriesData} />
+          <div className="section timeline">
+            {/* <h1 className="placeholder">placeholder: timeline tracker</h1> */}
+            <TimelineTracker
+              entries={exampleHobbyEntriesData}
+              emojiDict={hobbyEmojiDict}
+            />
           </div>
         </div>
 

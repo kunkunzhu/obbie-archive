@@ -27,12 +27,17 @@ body {
 
 body {
   display: flex;
-  height: 100%;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 body .placeholder {
   opacity: 0.2;
+}
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 #sidebar {
@@ -41,7 +46,7 @@ body .placeholder {
   border-right: solid;
   display: flex;
   flex-direction: column;
-  background-color: palegoldenrod;
+  background-color: papayawhip;
 }
 
 #sidebar > * {
@@ -49,6 +54,15 @@ body .placeholder {
   padding-right: 2rem;
 }
 #main {
+  width: 70vw;
   padding: 2rem;
   margin-left: 2.5rem;
+}
+
+.calendar {
+  height: 20vh;
+}
+
+.timeline {
+  height: 70vh;
 }
