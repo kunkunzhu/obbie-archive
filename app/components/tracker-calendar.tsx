@@ -8,6 +8,11 @@ interface CalendarTrackerI {
   days: string[];
 }
 
+interface HobbySquareI {
+  key: number;
+  hobby: number;
+}
+
 export default function CalendarTracker({ months, days }: CalendarTrackerI) {
   const renderTime = (times: string[]): ReactNode[] => {
     let timesArray: ReactNode[] = [];
@@ -19,9 +24,10 @@ export default function CalendarTracker({ months, days }: CalendarTrackerI) {
 
   const renderSquares = () => {
     let squares: ReactNode[] = [];
+
     for (let i = 1; i < 365; i++) {
-      const level = Math.floor(Math.random() * 3);
-      squares.push(<li key={i}></li>);
+      const hobby = Math.floor(Math.random() * 3);
+      squares.push(<li key={i} id={hobby.toString()}></li>);
     }
     return squares;
   };
