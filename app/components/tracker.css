@@ -20,7 +20,6 @@
 
 .graph {
   border-radius: 1rem;
-  border: 1px solid;
   display: inline-grid;
   grid-template-areas: "empty months" "days squares";
   grid-template-columns: auto 1fr;
@@ -35,26 +34,29 @@
 
 .months {
   text-transform: lowercase;
-  margin-bottom: -0.4rem;
+  margin-left: 1rem;
+  margin-bottom: 0rem;
   display: grid;
   grid-template-columns: repeat(12, calc(var(--week-width) * 4));
 }
 
 .days {
-  text-transform: lowercase;
+  text-transform: uppercase;
   text-align: right;
+  padding: 1rem;
 }
 
 .days,
 .squares {
   display: grid;
-  margin-left: -1.6rem;
   grid-gap: var(--square-gap);
   grid-template-rows: repeat(7, var(--square-size));
 }
 
 .squares {
-  border-radius: 100%;
+  border: 2px solid lightgray;
+  padding: 1rem;
+  border-radius: 1rem;
   grid-auto-flow: column;
   grid-auto-columns: var(--square-size);
   grid-auto-rows: var(--square-size);
@@ -72,24 +74,76 @@
 
 /** TIMELINE GRAPH **/
 
+.timeline-wrapper {
+  margin-top: 1rem;
+  border-top: 2px solid lightgrey;
+  overflow: scroll;
+}
+
 .timeline {
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   position: relative;
   gap: 1rem;
 }
 
-.timeline::before {
-  background-color: paleturquoise;
+.timeline-wrapper::before {
+  background-color: lightgrey;
   content: "";
   position: absolute;
-  width: 0.2rem;
+  margin-left: 4rem;
+  width: 2px;
   height: 100%;
 }
 
+.add-action {
+  position: absolute;
+  margin-top: -2rem;
+  margin-left: 2rem;
+  font-size: 3rem;
+  color: white;
+  background-color: black;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .timeline-entry {
-  margin-left: 1rem;
+  margin-left: 6rem;
   padding: 1rem;
   border: 2px solid lightgrey;
   border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+
+  .category {
+    font-size: 1.5rem;
+  }
+
+  .day {
+    position: absolute;
+    left: 1.5rem;
+  }
+
+  .text {
+    margin: auto 0 auto 0;
+  }
+}
+
+.reading {
+  border-color: #ffd3ba;
+}
+.coding {
+  border-color: #cfdeff;
+}
+.art {
+  border-color: #fffccf;
+}
+.writing {
+  border-color: #aee2cd;
 }
