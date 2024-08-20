@@ -20,15 +20,17 @@
     "express": "^4.19.2",
     "isbot": "^4.4.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "remixicon": "^4.3.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.11.2",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.41",
-    "vite": "^5.4.1",
     "@remix-run/eslint-config": "^2.0.0-pre.8",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.38.0",
-    "typescript": "^5.1.6"
+    "postcss": "^8.4.41",
+    "typescript": "^5.1.6",
+    "vite": "^5.4.1"
   }
 }
