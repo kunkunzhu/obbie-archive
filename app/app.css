@@ -31,13 +31,17 @@ body {
   width: 100%;
 }
 
+body .placeholder {
+  opacity: 0.2;
+}
+
 #sidebar {
   padding: 2rem;
   width: 22rem;
   border-right: solid;
   display: flex;
   flex-direction: column;
-  background-color: pink;
+  background-color: palegoldenrod;
 }
 
 #sidebar > * {
@@ -46,4 +50,5 @@ body {
 }
 #main {
   padding: 2rem;
+  margin-left: 2.5rem;
 }

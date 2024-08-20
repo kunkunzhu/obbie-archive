@@ -34,14 +34,14 @@
 }
 
 .months {
-  text-transform: uppercase;
+  text-transform: lowercase;
   margin-bottom: -0.4rem;
   display: grid;
   grid-template-columns: repeat(12, calc(var(--week-width) * 4));
 }
 
 .days {
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-align: right;
 }
 
@@ -68,4 +68,28 @@
 .squares li {
   border-radius: 100%;
   background-color: #ebedf0;
+}
+
+/** TIMELINE GRAPH **/
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 1rem;
+}
+
+.timeline::before {
+  background-color: paleturquoise;
+  content: "";
+  position: absolute;
+  width: 0.2rem;
+  height: 100%;
+}
+
+.timeline-entry {
+  margin-left: 1rem;
+  padding: 1rem;
+  border: 2px solid lightgrey;
+  border-radius: 0.5rem;
 }

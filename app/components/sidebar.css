@@ -1,0 +1,33 @@
+/** @format */
+.sidebar-selector {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  margin: 0 auto 0 auto;
+}
+
+.hobby {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  font-size: 2rem;
+  border-radius: 100%;
+  border: 2px solid grey;
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+
+  a {
+    color: red;
+    text-decoration: none;
+  }
+}
+
+.star {
+  border-color: lightgrey;
+}
+
+.all {
+  border-color: lightgrey;
+}
