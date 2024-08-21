@@ -115,11 +115,13 @@
 
 .timeline-entry {
   margin-left: 6rem;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
   border: 2px solid lightgrey;
   border-radius: 0.5rem;
   display: flex;
   gap: 1rem;
+  width: fit-content;
+  max-width: 60vw;
 
   .category {
     font-size: 1.5rem;

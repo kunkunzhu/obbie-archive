@@ -42,7 +42,7 @@ body .placeholder {
 
 #sidebar {
   padding: 2rem;
-  width: 22rem;
+  width: 20vw;
   border-right: solid;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ body .placeholder {
   padding-right: 2rem;
 }
 #main {
-  width: 70vw;
+  width: 80vw;
   padding: 2rem;
   margin-left: 2.5rem;
 }
