@@ -31,11 +31,11 @@ body {
   height: 100vh;
 }
 
-body .placeholder {
-  opacity: 0.2;
+#nav {
+  display: flex;
 }
 
-.section {
+#section {
   padding-top: 2rem;
   padding-bottom: 4rem;
 }
@@ -43,9 +43,9 @@ body .placeholder {
 #sidebar {
   padding: 2rem;
   width: 20vw;
-  border-right: solid;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: papayawhip;
 }
 
@@ -55,14 +55,15 @@ body .placeholder {
 }
 #main {
   width: 80vw;
-  padding: 2rem;
+  padding: 0 2rem 0 2rem;
   margin-left: 2.5rem;
+  overflow: hidden;
 }
 
 .calendar {
-  height: 20vh;
+  height: 25vh;
 }
 
 .timeline {
-  height: 70vh;
+  height: 75vh;
 }

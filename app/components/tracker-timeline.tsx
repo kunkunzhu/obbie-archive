@@ -1,26 +1,25 @@
 /** @format */
 
-import { HobbyDataI } from "common/types";
+import { HobbyEntryI } from "~/types";
 import "remixicon/fonts/remixicon.css";
 
 interface TimelineTrackerI {
-  entries: HobbyDataI[];
+  entries: HobbyEntryI[];
   emojiDict: any;
 }
 
 interface TimelineEntryI {
-  entry: HobbyDataI;
-  key: number;
+  entry: HobbyEntryI;
   emoji: string;
 }
 
-function TimelineEntry({ entry, key, emoji }: TimelineEntryI) {
+function TimelineEntry({ entry, emoji }: TimelineEntryI) {
   const { category, date } = entry;
 
   const className = "timeline-entry " + category;
 
-  // const month = date.getUTCMonth() + 1;
-  const day = date.getUTCDate();
+  // const month = date.month;
+  const day = date.day;
 
   return (
     <div className={className}>
@@ -35,23 +34,28 @@ export default function TimelineTracker({
   entries,
   emojiDict,
 }: TimelineTrackerI) {
-  function renderEntry({ entry, idx }: { entry: HobbyDataI; idx: number }) {
+  function renderEntry({ entry, idx }: { entry: HobbyEntryI; idx: number }) {
     const emoji = emojiDict[entry.category];
-    return <TimelineEntry entry={entry} key={idx} emoji={emoji} />;
+    return <TimelineEntry entry={entry} emoji={emoji} />;
   }
+  const test = [];
 
   return (
     <div className="timeline-wrapper">
       <div className="add-action" onClick={() => alert("ADD")}>
         <i className="ri-add-line"></i>
       </div>
-      {entries.length > 0 ? (
-        <div className="timeline">
-          {entries.map((entry, idx) => renderEntry({ entry, idx }))}
-        </div>
-      ) : (
-        <div>log an entry here!</div>
-      )}
+      <div className="timeline">
+        {entries.length > 0 ? (
+          <div className="entries">
+            {entries.map((entry, idx) => renderEntry({ entry, idx }))}
+          </div>
+        ) : (
+          <div className="error">
+            There are no entries yet... Start by logging one! (˶˃ ᵕ ˂˶) .ᐟ.ᐟ
+          </div>
+        )}
+      </div>
     </div>
   );
 }

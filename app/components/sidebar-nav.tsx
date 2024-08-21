@@ -1,8 +1,9 @@
 /** @format */
 
-import { HobbyI } from "common/types";
-import { ReactNode } from "react";
+import { HobbyI } from "~/types";
+import { ReactNode, useState } from "react";
 import "./sidebar.css";
+import { Link } from "@remix-run/react";
 
 interface SidebarNavI {
   hobbies: HobbyI[];
@@ -16,24 +17,24 @@ export default function SidebarNav({ hobbies }: SidebarNavI) {
       const className = "hobby " + hobby.name;
       hobbiesArray.push(
         <div className={className}>
-          <a href={`/home`} key={index}>
+          <Link to={`/home/${hobby.name}`} key={index}>
             {hobby.emoji}
-          </a>
+          </Link>
         </div>
       );
     });
     hobbiesArray.push(
       <div className="hobby star">
-        <a href={`/`} key={9}>
+        <Link to={`/home/star`} key={9}>
           ⭐
-        </a>
+        </Link>
       </div>
     );
     hobbiesArray.push(
       <div className="hobby all">
-        <a href={`/`} key={10}>
+        <Link to={`/home`} key={10}>
           ⚪
-        </a>
+        </Link>
       </div>
     );
     return hobbiesArray;

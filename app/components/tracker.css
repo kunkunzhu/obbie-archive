@@ -3,8 +3,8 @@
 /** CALENDAR GRAPH **/
 
 :root {
-  --square-size: 14px;
-  --square-gap: 2px;
+  --square-size: 1rem;
+  --square-gap: 0.2rem;
   --week-width: calc(var(--square-size) + var(--square-gap));
 }
 
@@ -76,6 +76,7 @@
 
 .timeline-wrapper {
   margin-top: 1rem;
+  width: 100%;
   border-top: 2px solid lightgrey;
   overflow: scroll;
 }
@@ -83,9 +84,17 @@
 .timeline {
   margin-top: 4rem;
   display: flex;
-  flex-direction: column;
   position: relative;
-  gap: 1rem;
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .error {
+    margin: 0 auto 0 auto;
+  }
 }
 
 .timeline-wrapper::before {
@@ -98,6 +107,7 @@
 }
 
 .add-action {
+  cursor: pointer;
   position: absolute;
   margin-top: -2rem;
   margin-left: 2rem;
