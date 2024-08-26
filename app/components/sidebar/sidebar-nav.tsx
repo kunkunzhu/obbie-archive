@@ -1,7 +1,7 @@
 /** @format */
 
 import { HobbyI } from "~/types";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import "./sidebar.css";
 import { Link } from "@remix-run/react";
 
