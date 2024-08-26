@@ -1,0 +1,57 @@
+/** @format */
+
+::backdrop {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+}
+
+dialog {
+  border: 2px solid;
+  border-radius: 1rem;
+}
+
+#modal {
+  width: 40rem;
+  min-height: 20rem;
+  max-height: fit-content;
+  border-color: grey;
+  padding: 0 2.5rem 0 2.5rem;
+  background-color: papayawhip;
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: -0.5rem 1rem 1rem 1rem;
+}
+
+#form {
+  .field {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      font-size: 1.2rem;
+      width: 25%;
+      text-transform: capitalize;
+    }
+
+    .input {
+      width: 75%;
+      border-radius: 2rem;
+      border: 1px solid lightgray;
+      font-size: 0.8rem;
+      padding: 0.6rem;
+    }
+  }
+  .submit {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
