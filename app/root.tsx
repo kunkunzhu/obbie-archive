@@ -1,10 +1,17 @@
 /** @format */
 
-import { Links, Meta, Outlet, Scripts } from "@remix-run/react";
+import {
+  Links,
+  Meta,
+  Outlet,
+  redirect,
+  Scripts,
+  useSearchParams,
+} from "@remix-run/react";
 import "./app.css";
-import CalendarTracker from "./components/tracker-calendar";
+import CalendarTracker from "./components/tracker/tracker-calendar";
 import { timeTable, hobbiesData } from "./example-data";
-import SidebarNav from "./components/sidebar-nav";
+import SidebarNav from "./components/sidebar/sidebar-nav";
 import { HobbyI } from "~/types";
 
 export default function App() {

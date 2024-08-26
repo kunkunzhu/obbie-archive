@@ -22,6 +22,7 @@ const fakeHobbyEntries = {
   async create(values: HobbyMutationI): Promise<HobbyEntryI> {
     const id = Math.random().toString(36).substring(2, 9); // placeholder ID
     const newEntry = { id, ...values };
+    console.log("entry:", newEntry);
     fakeHobbyEntries.entries[id] = newEntry;
     return newEntry;
   },
@@ -58,6 +59,7 @@ export async function getHobbyEntries(query?: string | null) {
 }
 
 export async function createHobbyEntry(values: HobbyMutationI) {
+  console.log("values:", values);
   const entry = await fakeHobbyEntries.create(values);
   return entry;
 }
