@@ -6,6 +6,7 @@ import {
   Outlet,
   redirect,
   Scripts,
+  useNavigation,
   useSearchParams,
 } from "@remix-run/react";
 import "./app.css";
@@ -16,6 +17,7 @@ import { HobbyI } from "~/types";
 
 export default function App() {
   const exampleHobbiesData = hobbiesData as HobbyI[];
+  const navigation = useNavigation();
 
   return (
     <html>
@@ -30,7 +32,10 @@ export default function App() {
           <SidebarNav hobbies={exampleHobbiesData} />
         </div>
 
-        <div id="main">
+        <div
+          id="main"
+          className={navigation.state === "loading" ? "loading" : ""}
+        >
           <div id="section" className="calendar">
             <div>
               <CalendarTracker

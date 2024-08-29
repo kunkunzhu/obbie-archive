@@ -53,11 +53,18 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
 #main {
   width: 80vw;
   padding: 0 2rem 0 2rem;
   margin-left: 2.5rem;
   overflow: hidden;
+}
+
+#main.loading {
+  opacity: 0.25;
+  transition: opacity 200ms;
+  transition-delay: 200ms;
 }
 
 .calendar {
