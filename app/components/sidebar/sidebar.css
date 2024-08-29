@@ -6,31 +6,21 @@
   margin: 0 auto 0 auto;
 }
 
-.hobby {
+#sidebar a {
   display: flex;
   text-align: center;
   align-items: center;
   background-color: white;
   font-size: 2rem;
   border-radius: 100%;
-  border: 2px solid grey;
+  border: 2px solid lightgrey;
   padding: 1rem;
   width: 4rem;
   height: 4rem;
-
-  a {
-    color: red;
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 
 #sidebar {
-  .star {
-    border-color: lightgrey;
-  }
-  .all {
-    border-color: lightgrey;
-  }
   .reading {
     background-color: #ffd3ba;
   }
@@ -43,4 +33,17 @@
   .writing {
     background-color: #aee2cd;
   }
+}
+
+#sidebar a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}
+
+#sidebar a.pending {
+  opacity: 0.5;
+}
+
+#sidebar a.active {
+  border-color: grey;
 }

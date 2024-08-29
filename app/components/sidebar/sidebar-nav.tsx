@@ -3,7 +3,7 @@
 import { HobbyI } from "~/types";
 import { ReactNode } from "react";
 import "./sidebar.css";
-import { Link } from "@remix-run/react";
+import { NavLink } from "@remix-run/react";
 
 interface SidebarNavI {
   hobbies: HobbyI[];
@@ -14,27 +14,38 @@ export default function SidebarNav({ hobbies }: SidebarNavI) {
   const renderHobbies = (hobbies: HobbyI[]): ReactNode[] => {
     let hobbiesArray: ReactNode[] = [];
     hobbies.map((hobby, index) => {
-      const className = "hobby " + hobby.name;
       hobbiesArray.push(
-        <div className={className}>
-          <Link to={`/home/${hobby.name}`} key={index}>
+        <div key={index}>
+          <NavLink
+            to={`/home/${hobby.name}`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active " + hobby.name
+                : isPending
+                ? "pending " + hobby.name
+                : hobby.name
+            }
+          >
             {hobby.emoji}
-          </Link>
+          </NavLink>
         </div>
       );
     });
     hobbiesArray.push(
-      <div className="hobby star">
-        <Link to={`/home/star`} key={9}>
+      <div key={9}>
+        <NavLink
+          to={`/home/star`}
+          className={({ isActive, isPending }) =>
+            isActive ? "active " : isPending ? "pending " : ""
+          }
+        >
           ⭐
-        </Link>
+        </NavLink>
       </div>
     );
     hobbiesArray.push(
-      <div className="hobby all">
-        <Link to={`/home`} key={10}>
-          ⚪
-        </Link>
+      <div key={10}>
+        <NavLink to={`/home/all`}>⚪</NavLink>
       </div>
     );
     return hobbiesArray;
