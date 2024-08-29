@@ -2,12 +2,11 @@
 
 import { HobbyEntryI } from "~/types";
 import "remixicon/fonts/remixicon.css";
-import { Link, useSearchParams } from "@remix-run/react";
+import { useSearchParams } from "@remix-run/react";
 
 interface TimelineTrackerI {
   entries: HobbyEntryI[];
   emojiDict: any;
-  // addEntry: any;
 }
 
 interface TimelineEntryI {
@@ -20,7 +19,6 @@ function TimelineEntry({ entry, emoji }: TimelineEntryI) {
 
   const className = "timeline-entry " + category;
 
-  // const month = date.month;
   const day = date.day;
 
   return (
@@ -35,19 +33,16 @@ function TimelineEntry({ entry, emoji }: TimelineEntryI) {
 export default function TimelineTracker({
   entries,
   emojiDict,
-}: // addEntry,
-TimelineTrackerI) {
+}: TimelineTrackerI) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   function renderEntry({ entry, idx }: { entry: HobbyEntryI; idx: number }) {
     const emoji = emojiDict[entry.category];
     return <TimelineEntry entry={entry} emoji={emoji} />;
   }
-  const test = [];
 
   return (
     <div className="timeline-wrapper">
-      {/* <Link to={`/home/create`}> */}
       <div
         className="add-action"
         onClick={() => {
@@ -60,7 +55,6 @@ TimelineTrackerI) {
       >
         <i className="ri-add-line"></i>
       </div>
-      {/* </Link> */}
       <div className="timeline">
         {entries.length > 0 ? (
           <div className="entries">

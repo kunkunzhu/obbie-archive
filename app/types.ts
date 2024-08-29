@@ -12,6 +12,7 @@ export interface HobbyMutationI {
   projects?: string[];
   pictureURL?: string;
   date: DateI;
+  dateStr: string;
   star: boolean;
 }
 

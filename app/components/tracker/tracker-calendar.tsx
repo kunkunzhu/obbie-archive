@@ -16,8 +16,8 @@ interface HobbySquareI {
 export default function CalendarTracker({ months, days }: CalendarTrackerI) {
   const renderTime = (times: string[]): ReactNode[] => {
     let timesArray: ReactNode[] = [];
-    times.map((time) => {
-      timesArray.push(<li>{time}</li>);
+    times.map((time, index) => {
+      timesArray.push(<li key={index}>{time}</li>);
     });
     return timesArray;
   };
