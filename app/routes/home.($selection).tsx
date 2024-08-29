@@ -3,15 +3,16 @@
 import TimelineTracker from "../components/tracker/tracker-timeline";
 import {
   Outlet,
-  redirect,
   useLoaderData,
+  useParams,
   useSearchParams,
 } from "@remix-run/react";
-import { getEmojiDict } from "../example-data";
+import { getEmojiDict, timeTable } from "../example-data";
 import { ActionFunctionArgs, json, LoaderFunctionArgs } from "@remix-run/node";
 import { createHobbyEntry, getHobbyEntries } from "../data";
 import { CreateModal } from "../components/modal/create-modal";
 import { HobbyMutationI } from "~/types";
+import CalendarTracker from "../components/tracker/tracker-calendar";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   // CREATE ACTION (move to more appropriate location later)
@@ -51,12 +52,25 @@ export default function Home() {
   const [searchParams] = useSearchParams();
   const { entries } = useLoaderData<typeof loader>();
   const emojiDict = getEmojiDict();
+  const params = useParams();
 
   return (
-    <div id="section" className="timeline">
-      {searchParams.get("create") && <CreateModal />}
-      <TimelineTracker entries={entries} emojiDict={emojiDict} />
-      <Outlet />
-    </div>
+    <>
+      <div id="section" className="calendar">
+        <div>
+          <CalendarTracker
+            months={timeTable.months}
+            days={timeTable.days}
+            entries={entries}
+            hobby={params.selection ? params.selection : "all"}
+          />
+        </div>
+      </div>
+      <div id="section" className="timeline">
+        {searchParams.get("create") && <CreateModal />}
+        <TimelineTracker entries={entries} emojiDict={emojiDict} />
+        <Outlet />
+      </div>
+    </>
   );
 }

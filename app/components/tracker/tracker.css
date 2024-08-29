@@ -61,6 +61,22 @@
   grid-auto-columns: var(--square-size);
   grid-auto-rows: var(--square-size);
   margin-right: 0.8rem;
+
+  .all {
+    background-color: black;
+  }
+  .reading {
+    background-color: #ffd3ba;
+  }
+  .coding {
+    background-color: #cfdeff;
+  }
+  .art {
+    background-color: #fffccf;
+  }
+  .writing {
+    background-color: #aee2cd;
+  }
 }
 
 .days li:nth-child(odd) {

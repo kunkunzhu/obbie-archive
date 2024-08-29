@@ -1,17 +1,8 @@
 /** @format */
 
-import {
-  Links,
-  Meta,
-  Outlet,
-  redirect,
-  Scripts,
-  useNavigation,
-  useSearchParams,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, useNavigation } from "@remix-run/react";
 import "./app.css";
-import CalendarTracker from "./components/tracker/tracker-calendar";
-import { timeTable, hobbiesData } from "./example-data";
+import { hobbiesData } from "./example-data";
 import SidebarNav from "./components/sidebar/sidebar-nav";
 import { HobbyI } from "~/types";
 
@@ -36,14 +27,6 @@ export default function App() {
           id="main"
           className={navigation.state === "loading" ? "loading" : ""}
         >
-          <div id="section" className="calendar">
-            <div>
-              <CalendarTracker
-                months={timeTable.months}
-                days={timeTable.days}
-              />
-            </div>
-          </div>
           <Outlet />
         </div>
         <Scripts />
