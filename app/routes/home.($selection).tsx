@@ -31,11 +31,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
       month: parseInt(dateString.substring(5, 7)),
       day: parseInt(dateString.substring(8, 10)),
     },
+    dateStr: dateString,
     star: formEntry.star ? true : false,
   };
-
-  console.log(formEntry);
-  console.log(entry);
   return await createHobbyEntry(entry);
 };
 
@@ -57,11 +55,7 @@ export default function Home() {
   return (
     <div id="section" className="timeline">
       {searchParams.get("create") && <CreateModal />}
-      <TimelineTracker
-        entries={entries}
-        emojiDict={emojiDict}
-        // addEntry={() => openCreateModal(!createModal)}
-      />
+      <TimelineTracker entries={entries} emojiDict={emojiDict} />
       <Outlet />
     </div>
   );

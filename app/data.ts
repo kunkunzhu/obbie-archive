@@ -3,7 +3,6 @@
 import { fakeHobbyEntriesData } from "./example-data";
 import { HobbyEntryI, HobbyMutationI } from "./types";
 import invariant from "tiny-invariant";
-
 // FAKE DATABASE as placeholder until backend is created
 
 const fakeHobbyEntries = {
@@ -22,7 +21,6 @@ const fakeHobbyEntries = {
   async create(values: HobbyMutationI): Promise<HobbyEntryI> {
     const id = Math.random().toString(36).substring(2, 9); // placeholder ID
     const newEntry = { id, ...values };
-    console.log("entry:", newEntry);
     fakeHobbyEntries.entries[id] = newEntry;
     return newEntry;
   },
@@ -47,19 +45,18 @@ export async function getHobbyEntries(query?: string | null) {
   await new Promise((resolve) => setTimeout(resolve, 500));
   let allEntries = await fakeHobbyEntries.getAll();
 
-  if (query) {
+  if (!query || query == "all") {
+    return allEntries;
+  } else if (query) {
     if (query == "star") {
       return allEntries.filter((entry) => entry.star);
     } else {
       return allEntries.filter((entry) => entry.category == query);
     }
-  } else {
-    return allEntries;
   }
 }
 
 export async function createHobbyEntry(values: HobbyMutationI) {
-  console.log("values:", values);
   const entry = await fakeHobbyEntries.create(values);
   return entry;
 }

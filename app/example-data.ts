@@ -53,6 +53,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 12,
     },
+    dateStr: "2024-08-12",
     star: false,
   },
   {
@@ -64,6 +65,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 11,
     },
+    dateStr: "2024-08-11",
     star: false,
   },
   {
@@ -75,6 +77,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 10,
     },
+    dateStr: "2024-08-10",
     star: false,
   },
   {
@@ -86,6 +89,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 10,
     },
+    dateStr: "2024-08-10",
     star: false,
   },
   {
@@ -97,6 +101,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 9,
     },
+    dateStr: "2024-08-19",
     star: true,
   },
   {
@@ -108,6 +113,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 9,
     },
+    dateStr: "2024-08-19",
     star: true,
   },
   {
@@ -119,6 +125,7 @@ export const fakeHobbyEntriesData = [
       month: 8,
       day: 7,
     },
+    dateStr: "2024-08-7",
     star: true,
   },
 ];
